@@ -13,6 +13,23 @@
         flavor = "tap-preferred";
 };
 
+// &lt {
+//     retro-tap;
+//     flavor = "tap-preferred";
+// };
+//
+// / {
+//     behaviors {
+//         mthp: hold_preferred_tap {
+//                         compatible = "zmk,behavior-hold-tap";
+//                         label = "HOLD_PREFERRED_TAP";
+//                         #binding-cells = <2>;
+//                         tapping-term-ms = <125>;
+//                         flavor = "hold-preferred";
+//                         bindings = <&kp>, <&kp>;
+//         };
+//     };
+
 / {
         keymap {
                 compatible = "zmk,keymap";
