@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 &mt {
-        retro-tap;
+//        retro-tap;
         flavor = "tap-preferred";
 };
 
@@ -25,7 +25,7 @@
 //                         label = "HOLD_PREFERRED_TAP";
 //                         #binding-cells = <2>;
 //                         tapping-term-ms = <125>;
-//                         flavor = "hold-preferred";
+//                         flavor = "hold-preferred";    
 //                         bindings = <&kp>, <&kp>;
 //         };
 //     };
