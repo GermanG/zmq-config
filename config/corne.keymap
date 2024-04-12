@@ -13,6 +13,12 @@
         flavor = "tap-preferred";
 };
 
+&soft_off {
+    hold-time-ms = <5000>; // Only turn off it the key is held for 5 seconds or longer.
+};
+
+
+
 // &lt {
 //     retro-tap;
 //     flavor = "tap-preferred";
@@ -90,12 +96,12 @@
 // -----------------------------------------------------------------------------------------
 // |      |     |     |     |     |BTCLR|   |     |     |     |     | BUP |  PUP |
 // |      |     |     |     |     |     |   | LFT | DWN |  UP | RGT | BWN |  PDN |
-// |      |     |     |     |     |     |   | PRV | NXT |  V- | V+  | PP  |      |
+// |      |     |     |     |     |S_OFF|   | PRV | NXT |  V- | V+  | PP  |      |
 //                    |     |     |     |   |     |     |     |
                         bindings = <
    &trans &trans   &trans   &trans   &trans   &bt BT_CLR    &trans     &trans     &trans       &trans       &kp C_BRI_UP    &kp PG_UP
    &trans &trans   &trans   &trans   &trans   &trans        &kp LEFT   &kp DOWN   &kp UP       &kp RIGHT    &kp C_BRI_DN    &kp PG_DN    
-   &trans &trans   &trans   &trans   &trans   &trans        &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &trans
+   &trans &trans   &trans   &trans   &trans   &soft_off     &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &trans
                             &trans   &trans   &trans        &trans     &trans     &trans
                         >;
                 };
