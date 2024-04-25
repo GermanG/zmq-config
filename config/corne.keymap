@@ -102,7 +102,7 @@
    &trans &trans   &trans   &trans   &trans   &trans        &trans     &trans     &trans       &trans       &kp C_BRI_UP    &kp PG_UP
    &trans &trans   &trans   &trans   &trans   &trans        &kp LEFT   &kp DOWN   &kp UP       &kp RIGHT    &kp C_BRI_DN    &kp PG_DN    
    &trans &trans   &trans   &trans   &trans   &soft_off     &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &trans
-                            &trans   &trans   &trans        &trans     &trans     &trans
+                            &trans   &trans   &trans        &soft_off  &trans     &trans
                         >;
                 };
                 fn_layer {
