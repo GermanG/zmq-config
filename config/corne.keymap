@@ -48,11 +48,12 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        // the right side always turns off on press :/
         soff: soft_off {
             compatible = "zmk,behavior-soft-off";
             #binding-cells = <0>;
-            // split-peripheral-off-on-press;
-            hold-time-ms = <5000>; // Only turn off it the key is held for 5 seconds or longer.
+            split-peripheral-off-on-press = n;
+            hold-time-ms = <2000>; // Only turn off it the key is held for 2 seconds or longer.
         };
     };
     keymap {
@@ -80,7 +81,7 @@
                         bindings = <
    &kp GRAVE      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6     &kp N7     &kp N8       &kp N9       &kp N0    &kp BSPC
    &trans         &trans       &trans       &trans       &trans       &trans         &trans     &kp MINUS  &kp EQUAL    &kp LBKT     &kp RBKT  &kp BSLH
-   &trans         &trans       &trans       &trans       &trans       &trans         &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &soff
+   &trans         &trans       &trans       &trans       &trans       &trans         &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &trans
                                             &kp LGUI     &trans       &kp SPACE      &kp RET    &trans   &kp RALT
                         >;
                 };
@@ -107,18 +108,18 @@
                         bindings = <
    &trans &trans   &trans   &trans   &trans   &trans        &trans     &trans     &trans       &trans       &kp C_BRI_UP    &kp PG_UP
    &trans &trans   &trans   &trans   &trans   &trans        &kp LEFT   &kp DOWN   &kp UP       &kp RIGHT    &kp C_BRI_DN    &kp PG_DN    
-   &trans &trans   &trans   &trans   &trans   &soft_off     &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &trans
+   &trans &trans   &trans   &trans   &trans   &trans        &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &trans
                             &trans   &trans   &trans        &soft_off  &trans     &trans
                         >;
                 };
                 fn_layer {
 // -----------------------------------------------------------------------------------------
-// |      |     |     |     |     |BTCLR|   |     |     |     |     |     |      |
+// | SOFF |     |     |     |     |BTCLR|   |     |     |     |     |     |      |
 // |      | BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |      |
 // |      |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    |     |     |     |   |     |     |     |
                         bindings = <
-   &trans &trans       &trans       &trans       &trans       &bt BT_CLR     &kp F1 &kp F2 &kp F3  &kp F4  &kp F5  &kp F6    
+   &soff  &trans       &trans       &trans       &trans       &bt BT_CLR     &kp F1 &kp F2 &kp F3  &kp F4  &kp F5  &kp F6    
    &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp F7 &kp F8 &kp F9  &kp F10 &kp F11 &kp F12        
    &trans &trans       &trans       &trans       &trans       &trans         &trans &trans &trans  &trans  &trans  &trans
                                     &trans       &trans       &trans         &trans &trans &trans
