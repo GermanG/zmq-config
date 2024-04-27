@@ -49,6 +49,11 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        soff: soft_off {
+            compatible = "zmk,behavior-soft-off";
+            #binding-cells = <0>;
+            // split-peripheral-off-on-press;
+        };
     };
     keymap {
                 compatible = "zmk,keymap";
